@@ -14,7 +14,7 @@ class Bookmarks
       rs.clear if rs
       con.close if con
     end
-    list.map{|url| "#{url}<br>"}.join
+    list.each_with_index.map{|url, index| "#{index + 1}. #{url}<br>"}.join
   end
 end
 
