@@ -64,7 +64,7 @@ I would like to restrict users to manage only their bookmarks
 
 ### Process Diagrams
 
-![view_bookmarks_process](./process_diagrams/view_bookmarks.jpg)
+![view_bookmarks_process](./docs/view_bookmarks.jpg)
 
 
 ### Objects
