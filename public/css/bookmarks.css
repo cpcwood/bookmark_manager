@@ -1,0 +1,29 @@
+/* Stylesheet for bookmarks page */
+
+.reveal-update {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  transition: 0.5s;
+}
+input[id='update']:checked ~ .reveal-update{
+  opacity: 1;
+  max-height: 100px;
+  overflow: visible;
+  transform: scale(1);
+}
+
+.reveal-delete {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  transition: 0.5s;
+}
+input[id='delete']:checked ~ .reveal-delete{
+  opacity: 1;
+  max-height: 100px;
+  overflow: visible;
+  transform: scale(1);
+}

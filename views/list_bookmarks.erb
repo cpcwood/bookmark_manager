@@ -1,0 +1,47 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="css/bookmarks.css">
+</head>
+
+<body>
+  <h2> Bookmarks </h2>
+  <ul>
+    <% @bookmarks.each do |bookmark| %>
+
+      <li><a href='<%= bookmark.url %>'>Visit <%= bookmark.title %></a>
+        <br><br>
+        Delete Bookmark: <input type='checkbox' id='delete'><br><br>
+        <div class='reveal-delete'>
+          <form action='/bookmarks/<%=bookmark.id%>' method='post'>
+            <input type ='hidden' name='_method' value='delete'>
+            Are you sure? <input type='submit' value='Delete Bookmark'>
+          </form>
+        </div>
+
+        Update Bookmark: <input type='checkbox' id='update'><br><br>
+        <div class='reveal-update'>
+          <form action='/bookmarks/<%=bookmark.id%>' method='post'>
+            <label>Title: <input type='text' name='title' value='<%=bookmark.title%>'></label><br>
+            <label>URL: <input type='text' name='url' value='<%=bookmark.url%>'></label><br>
+            <input type ='hidden' name='_method' value='put'>
+            <input type='submit' value='Update Bookmark'>
+          </form>
+        </div>
+        <br>
+      </li>
+
+    <% end %>
+  </ul>
+
+  <h4> Add New Bookmark </h4>
+  <form action='/bookmarks' method='post'>
+    <label>URL: <input type='text' name='url' id='url'></label><br>
+    <label>Title: <input type='text' name='title' id='title'></label><br>
+    <input type='submit' value='Add Bookmark'>
+  </form>
+
+  <% if @message%>
+    <br><br>
+    <h4> <%=@message%></h4>
+  <% end %>
+
+</body>

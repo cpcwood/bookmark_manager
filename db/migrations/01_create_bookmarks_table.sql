@@ -3,6 +3,4 @@
 -- Connect to the database using the pqsl command \c bookmark_manager;
 -- Run the query we have saved in the file 01_create_bookmarks_table.sql
 
-CREATE TABLE bookmarks(bookmark_number INTEGER PRIMARY KEY, url VARCHAR NOT NULL);
-
-INSERT INTO bookmarks(bookmark_number, url) VALUES (1, 'http://www.test-url.com');
+CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60), title VARCHAR(60));

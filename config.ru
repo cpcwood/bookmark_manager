@@ -1,3 +1,3 @@
-require './app_controller.rb'
+require './app.rb'
 
-run BookmarkApp
+run BookmarkManager
